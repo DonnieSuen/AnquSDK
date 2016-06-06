@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		791C06EF1D01784E00D6B9B6 /* AnalysisInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 791C06ED1D01784E00D6B9B6 /* AnalysisInfo.h */; };
+		791C06F01D01784E00D6B9B6 /* AnalysisInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 791C06EE1D01784E00D6B9B6 /* AnalysisInfo.m */; };
+		791C06F21D017D4300D6B9B6 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 791C06F11D017D4300D6B9B6 /* AdSupport.framework */; };
+		791C06F41D018C9100D6B9B6 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 791C06F31D018C9100D6B9B6 /* CoreTelephony.framework */; };
+		791C07021D019DE500D6B9B6 /* AESCrypt.h in Headers */ = {isa = PBXBuildFile; fileRef = 791C06F81D019DE500D6B9B6 /* AESCrypt.h */; };
+		791C07031D019DE500D6B9B6 /* AESCrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 791C06F91D019DE500D6B9B6 /* AESCrypt.m */; };
+		791C07051D019DE500D6B9B6 /* NSData+Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = 791C06FB1D019DE500D6B9B6 /* NSData+Base64.h */; };
+		791C07061D019DE500D6B9B6 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 791C06FC1D019DE500D6B9B6 /* NSData+Base64.m */; };
+		791C07071D019DE500D6B9B6 /* NSData+CommonCrypto.h in Headers */ = {isa = PBXBuildFile; fileRef = 791C06FD1D019DE500D6B9B6 /* NSData+CommonCrypto.h */; };
+		791C07081D019DE500D6B9B6 /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 791C06FE1D019DE500D6B9B6 /* NSData+CommonCrypto.m */; };
+		791C07091D019DE500D6B9B6 /* NSString+Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = 791C06FF1D019DE500D6B9B6 /* NSString+Base64.h */; };
+		791C070A1D019DE500D6B9B6 /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 791C07001D019DE500D6B9B6 /* NSString+Base64.m */; };
 		8B056D891ACA42BB006B9B64 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD8A6481ABFFCE700F4DF58 /* AlipaySDK.framework */; };
 		8B05ED5F1B7F235C00AD65A0 /* Kefuconnect.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B05ED5E1B7F235C00AD65A0 /* Kefuconnect.h */; };
 		8B05ED611B7F239000AD65A0 /* Kefuconnect.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B05ED601B7F239000AD65A0 /* Kefuconnect.m */; };
@@ -14,7 +26,7 @@
 		8B0EE3E21AD8ED2900335F88 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B0EE3E11AD8ED2800335F88 /* Security.framework */; };
 		8B0EE3E61AD91F4300335F88 /* IPAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B0EE3E51AD91F4300335F88 /* IPAddress.h */; };
 		8B0EE3EA1AD923BB00335F88 /* IPAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0EE3E91AD923BB00335F88 /* IPAddress.m */; };
-		8B3FA4DD1CAB88B200F3ECE2 /* AnquIOSSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8B3FA4DC1CAB88B200F3ECE2 /* AnquIOSSDK.bundle */; settings = {ASSET_TAGS = (); }; };
+		8B3FA4DD1CAB88B200F3ECE2 /* AnquIOSSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8B3FA4DC1CAB88B200F3ECE2 /* AnquIOSSDK.bundle */; };
 		8B43F7241B7B457F004D6C77 /* libUPPayPlugin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BF9197E1AC0F8290053A278 /* libUPPayPlugin.a */; };
 		8B52551A1AE4E3B900BDC602 /* DDLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B5255161AE4E3B900BDC602 /* DDLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8B52551B1AE4E3B900BDC602 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B5255171AE4E3B900BDC602 /* DDLog.m */; };
@@ -200,6 +212,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		791C06ED1D01784E00D6B9B6 /* AnalysisInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnalysisInfo.h; path = Analysis/AnalysisInfo.h; sourceTree = "<group>"; };
+		791C06EE1D01784E00D6B9B6 /* AnalysisInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnalysisInfo.m; path = Analysis/AnalysisInfo.m; sourceTree = "<group>"; };
+		791C06F11D017D4300D6B9B6 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		791C06F31D018C9100D6B9B6 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		791C06F81D019DE500D6B9B6 /* AESCrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AESCrypt.h; path = "AESCrypt-ObjC-master/AESCrypt.h"; sourceTree = "<group>"; };
+		791C06F91D019DE500D6B9B6 /* AESCrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AESCrypt.m; path = "AESCrypt-ObjC-master/AESCrypt.m"; sourceTree = "<group>"; };
+		791C06FB1D019DE500D6B9B6 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Base64.h"; path = "AESCrypt-ObjC-master/NSData+Base64.h"; sourceTree = "<group>"; };
+		791C06FC1D019DE500D6B9B6 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+Base64.m"; path = "AESCrypt-ObjC-master/NSData+Base64.m"; sourceTree = "<group>"; };
+		791C06FD1D019DE500D6B9B6 /* NSData+CommonCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+CommonCrypto.h"; path = "AESCrypt-ObjC-master/NSData+CommonCrypto.h"; sourceTree = "<group>"; };
+		791C06FE1D019DE500D6B9B6 /* NSData+CommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+CommonCrypto.m"; path = "AESCrypt-ObjC-master/NSData+CommonCrypto.m"; sourceTree = "<group>"; };
+		791C06FF1D019DE500D6B9B6 /* NSString+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Base64.h"; path = "AESCrypt-ObjC-master/NSString+Base64.h"; sourceTree = "<group>"; };
+		791C07001D019DE500D6B9B6 /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Base64.m"; path = "AESCrypt-ObjC-master/NSString+Base64.m"; sourceTree = "<group>"; };
 		8B05ED5E1B7F235C00AD65A0 /* Kefuconnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Kefuconnect.h; sourceTree = "<group>"; };
 		8B05ED601B7F239000AD65A0 /* Kefuconnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Kefuconnect.m; sourceTree = "<group>"; };
 		8B0EE3DF1AD8ED1200335F88 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -401,6 +425,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				791C06F41D018C9100D6B9B6 /* CoreTelephony.framework in Frameworks */,
+				791C06F21D017D4300D6B9B6 /* AdSupport.framework in Frameworks */,
 				8B43F7241B7B457F004D6C77 /* libUPPayPlugin.a in Frameworks */,
 				8B6DBCFB1B3A5FA100B35CA3 /* libipaynowPlugin.a in Frameworks */,
 				8B056D891ACA42BB006B9B64 /* AlipaySDK.framework in Frameworks */,
@@ -425,6 +451,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		791C06D71D01606500D6B9B6 /* Analysis */ = {
+			isa = PBXGroup;
+			children = (
+				791C06ED1D01784E00D6B9B6 /* AnalysisInfo.h */,
+				791C06EE1D01784E00D6B9B6 /* AnalysisInfo.m */,
+			);
+			name = Analysis;
+			sourceTree = "<group>";
+		};
+		791C06F71D019DD900D6B9B6 /* AES */ = {
+			isa = PBXGroup;
+			children = (
+				791C06F81D019DE500D6B9B6 /* AESCrypt.h */,
+				791C06F91D019DE500D6B9B6 /* AESCrypt.m */,
+				791C06FB1D019DE500D6B9B6 /* NSData+Base64.h */,
+				791C06FC1D019DE500D6B9B6 /* NSData+Base64.m */,
+				791C06FD1D019DE500D6B9B6 /* NSData+CommonCrypto.h */,
+				791C06FE1D019DE500D6B9B6 /* NSData+CommonCrypto.m */,
+				791C06FF1D019DE500D6B9B6 /* NSString+Base64.h */,
+				791C07001D019DE500D6B9B6 /* NSString+Base64.m */,
+			);
+			name = AES;
+			sourceTree = "<group>";
+		};
 		8B5255151AE4E39C00BDC602 /* Log */ = {
 			isa = PBXGroup;
 			children = (
@@ -503,12 +553,14 @@
 		8BD8A4E01ABFDBE100F4DF58 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				8B5255151AE4E39C00BDC602 /* Log */,
 				8BAE93311AD3E566006046E2 /* AnquCallback.h */,
 				8BFA23761AC2970700E12148 /* AnquKitConfig.h */,
-				8BF919BF1AC1426D0053A278 /* UDID_Tools */,
 				8BD8A5031ABFDBE100F4DF58 /* AnquInterfaceKit.h */,
 				8BD8A5041ABFDBE100F4DF58 /* AnquInterfaceKit.m */,
+				791C06F71D019DD900D6B9B6 /* AES */,
+				791C06D71D01606500D6B9B6 /* Analysis */,
+				8B5255151AE4E39C00BDC602 /* Log */,
+				8BF919BF1AC1426D0053A278 /* UDID_Tools */,
 				8BD8A4E11ABFDBE100F4DF58 /* AcountManage */,
 				8BD8A4F21ABFDBE100F4DF58 /* Activate */,
 				8BD8A4F71ABFDBE100F4DF58 /* Address */,
@@ -824,6 +876,8 @@
 		8BD8A6301ABFDDDC00F4DF58 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				791C06F31D018C9100D6B9B6 /* CoreTelephony.framework */,
+				791C06F11D017D4300D6B9B6 /* AdSupport.framework */,
 				8B3FA4DC1CAB88B200F3ECE2 /* AnquIOSSDK.bundle */,
 				8B6DBCFA1B3A5FA000B35CA3 /* libipaynowPlugin.a */,
 				8B0EE3E11AD8ED2800335F88 /* Security.framework */,
@@ -872,8 +926,10 @@
 				8BD8A5C21ABFDBE100F4DF58 /* SBJsonStreamWriter.h in Headers */,
 				8BD8A5BC1ABFDBE100F4DF58 /* NSString+SBJSON.h in Headers */,
 				8BD8A5C01ABFDBE100F4DF58 /* SBJsonParser.h in Headers */,
+				791C07091D019DE500D6B9B6 /* NSString+Base64.h in Headers */,
 				8BD8A5BE1ABFDBE100F4DF58 /* SBJsonBase.h in Headers */,
 				8BD8A5B81ABFDBE100F4DF58 /* JsonParser.h in Headers */,
+				791C07071D019DE500D6B9B6 /* NSData+CommonCrypto.h in Headers */,
 				8BD8A5C41ABFDBE100F4DF58 /* SBJsonWriter.h in Headers */,
 				8BD8A5B71ABFDBE100F4DF58 /* JSON.h in Headers */,
 				8BD8A5B51ABFDBE100F4DF58 /* AnquReachability.h in Headers */,
@@ -885,6 +941,7 @@
 				8BAE93291AD3BED9006046E2 /* PlayerExtInfo.h in Headers */,
 				8BD8A5F11ABFDBE100F4DF58 /* PSTCollectionViewController.h in Headers */,
 				8BD8A6041ABFDBE100F4DF58 /* PSTGridLayoutSection.h in Headers */,
+				791C06EF1D01784E00D6B9B6 /* AnalysisInfo.h in Headers */,
 				8BD8A5F01ABFDBE100F4DF58 /* PSTCollectionViewCommon.h in Headers */,
 				8BD8A6161ABFDBE100F4DF58 /* NSData+hexRepresentationWithSpaces_AS.h in Headers */,
 				8BD8A5931ABFDBE100F4DF58 /* AcountCell.h in Headers */,
@@ -924,6 +981,7 @@
 				8BD8A5DD1ABFDBE100F4DF58 /* PayManual.h in Headers */,
 				8BD8A62C1ABFDBE100F4DF58 /* UPPayPlugin.h in Headers */,
 				8BD8A61E1ABFDBE100F4DF58 /* QCheckBox.h in Headers */,
+				791C07051D019DE500D6B9B6 /* NSData+Base64.h in Headers */,
 				8BD8A5EE1ABFDBE100F4DF58 /* PSTCollectionViewCell.h in Headers */,
 				8BD8A5F91ABFDBE100F4DF58 /* PSTCollectionViewLayout+Internals.h in Headers */,
 				8BD8A5B31ABFDBE100F4DF58 /* qqMac.h in Headers */,
@@ -943,6 +1001,7 @@
 				8BD8A59D1ABFDBE100F4DF58 /* LoginOut.h in Headers */,
 				8BD8A5A31ABFDBE100F4DF58 /* Activate.h in Headers */,
 				8BD8A61C1ABFDBE100F4DF58 /* RNCryptManager.h in Headers */,
+				791C07021D019DE500D6B9B6 /* AESCrypt.h in Headers */,
 				8BF919A51AC138970053A278 /* AnquIOSSDK-Prefix.pch in Headers */,
 				8BD8A6201ABFDBE100F4DF58 /* Floating.h in Headers */,
 				8BD8A60A1ABFDBE100F4DF58 /* Encrypt+Decrypt.h in Headers */,
@@ -1057,6 +1116,7 @@
 				8BD8A6251ABFDBE100F4DF58 /* AnquImage.m in Sources */,
 				8BD8A6231ABFDBE100F4DF58 /* RCDraggableButton.m in Sources */,
 				8BD8A5C51ABFDBE100F4DF58 /* SBJsonWriter.m in Sources */,
+				791C06F01D01784E00D6B9B6 /* AnalysisInfo.m in Sources */,
 				8BD8A5D01ABFDBE100F4DF58 /* Login.m in Sources */,
 				8BD8A5FD1ABFDBE100F4DF58 /* PSTCollectionViewUpdateItem.m in Sources */,
 				8BD8A59E1ABFDBE100F4DF58 /* LoginOut.m in Sources */,
@@ -1079,6 +1139,7 @@
 				8BD8A5ED1ABFDBE100F4DF58 /* PSTCollectionView.m in Sources */,
 				8BF919C31AC1428E0053A278 /* SvUDIDTools.m in Sources */,
 				8BD8A61D1ABFDBE100F4DF58 /* RNCryptManager.m in Sources */,
+				791C07081D019DE500D6B9B6 /* NSData+CommonCrypto.m in Sources */,
 				8BD8A5BB1ABFDBE100F4DF58 /* NSObject+SBJSON.m in Sources */,
 				8BD8A5C81ABFDBE100F4DF58 /* MBProgressHUD.m in Sources */,
 				8BD8A5CA1ABFDBE100F4DF58 /* DropCell.m in Sources */,
@@ -1087,9 +1148,11 @@
 				8B52551D1AE4E3B900BDC602 /* DDTTYLogger.m in Sources */,
 				8BD8A5EF1ABFDBE100F4DF58 /* PSTCollectionViewCell.m in Sources */,
 				8BD8A5D81ABFDBE100F4DF58 /* OrderInfo.m in Sources */,
+				791C07031D019DE500D6B9B6 /* AESCrypt.m in Sources */,
 				8BD8A59A1ABFDBE100F4DF58 /* BindPhone.m in Sources */,
 				8BFB660E1ACEA26D0049E37A /* PlayerExtInfo.m in Sources */,
 				8BD8A5BD1ABFDBE100F4DF58 /* NSString+SBJSON.m in Sources */,
+				791C070A1D019DE500D6B9B6 /* NSString+Base64.m in Sources */,
 				8BD8A5C31ABFDBE100F4DF58 /* SBJsonStreamWriter.m in Sources */,
 				8BD8A5F21ABFDBE100F4DF58 /* PSTCollectionViewController.m in Sources */,
 				8BD8A59C1ABFDBE100F4DF58 /* HumanResources.m in Sources */,
@@ -1102,6 +1165,7 @@
 				8BD8A5A21ABFDBE100F4DF58 /* SafeHome.m in Sources */,
 				8BD8A5B61ABFDBE100F4DF58 /* AnquReachability.m in Sources */,
 				8BD8A6011ABFDBE100F4DF58 /* PSTGridLayoutItem.m in Sources */,
+				791C07061D019DE500D6B9B6 /* NSData+Base64.m in Sources */,
 				8BD8A5941ABFDBE100F4DF58 /* AcountCell.m in Sources */,
 				8BF3CBCB1ADCE755003BA8D8 /* ForgetPass.m in Sources */,
 				8B0EE3EA1AD923BB00335F88 /* IPAddress.m in Sources */,
@@ -1285,6 +1349,7 @@
 					"$(inherited)",
 				);
 				MACH_O_TYPE = staticlib;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

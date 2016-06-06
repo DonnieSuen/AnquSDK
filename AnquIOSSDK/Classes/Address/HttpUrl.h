@@ -48,6 +48,9 @@ static const NSString *API_URL_WEIXINNOTIFY = @"http://42.62.30.107:10055/index.
 
 static const NSString *API_URL_GETWEIXIN = @"http://i.anqu.com/index.php/orders/mchpay/";
 
+
+static const NSString *API_URL_ANALYSIS = @"http://a-sdk.api-ag.com/analysis.php";
+
 //Ali支付
 static const NSString  *ALIPARTNER = @"2088211779053078";
 static const NSString  *ALISELLER  = @"2088211779053078";

@@ -19,6 +19,8 @@
 #import "NSDictionary+QueryBuilder.h"
 #import "IpaynowPluginApi.h"
 #import "Kefuconnect.h"
+#import "AnalysisInfo.h"
+#import "AESCrypt.h"
 
 @implementation AnquInterfaceKit
 
@@ -123,7 +125,8 @@ static  int ddLogLevel = LOG_FLAG_ERROR | LOG_FLAG_INFO;
     UIViewController *rootViewController = [UIApplication sharedApplication].keyWindow.rootViewController;
     //[UIApplication sharedApplication].delegate.window.rootViewController;
     [active activiateToAnqu:rootViewController];
-    
+
+    [self getAnalysisInfo];
 }
 
 
@@ -685,6 +688,62 @@ static  int ddLogLevel = LOG_FLAG_ERROR | LOG_FLAG_INFO;
 //   // [self anqupay];
 //}
 
+-(void)getAnalysisInfo{
+    NSString *IDFA = [AnalysisInfo getIDFA];
+    NSString *iOSVersion = [AnalysisInfo getiOSVersion];
+    NSString *currentNet = [AnalysisInfo getCurrentNet];
+    NSString *carrier = [AnalysisInfo getCarrier];
+    NSString *deviceType = [AnalysisInfo getDeviceType];
+    NSString *bundleID = [AnalysisInfo getBundleID];
+    NSString *version = [AnalysisInfo getVersion];
+    NSString *sysLanguage = [AnalysisInfo getSysLanguage];
+    
+    NSDictionary *dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                                IDFA, @"IDFA",
+                                iOSVersion,@"iOSVersion",
+                                currentNet,@"CurrentNet",
+                                carrier,@"Carrier",
+                                deviceType,@"DeviceType",
+                                bundleID,@"BundleID",
+                                version,@"Version",
+                                sysLanguage,@"SysLanguage",
+                                nil];
+    
+    SBJsonWriter *writer = [[SBJsonWriter alloc] init];
+    NSString *jsonValue = [writer stringWithObject:dictionary];
+    
+    NSString *password = @"p4ssw0rd";
+    NSString *encryptedData = [AESCrypt encrypt:jsonValue password:password];
+    
+    NSDictionary *postDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                                encryptedData, @"data",
+                                nil];
+    
+    
+    NSString *postData = [postDictionary buildQueryString];
+    httpRequest *_request = [[httpRequest alloc] init];
+    _request.dlegate = self;
+    _request.error = @selector(error_callback);
+    [_request post:API_URL_ANALYSIS argData:postData];
+}
 
+-(void)error_callback{
+    NSLog(@"返回失败");
+}
+
+-(void)tomore
+{
+    NSUserDefaults *defaults=[CommonUtils getNSUserContext];
+    
+    RecommWeb * more= [[RecommWeb alloc] init];
+    more.webUrl = [defaults objectForKey:moreLink];
+    
+    UIView* view = [[UIApplication sharedApplication] keyWindow].rootViewController.view;
+    UIViewController *rootViewController = [UIApplication sharedApplication].delegate.window.rootViewController;
+    rootViewController.modalPresentationStyle = UIModalPresentationCurrentContext;
+    [rootViewController presentModalViewController:more animated:YES ];
+    
+    // [MTPopupWindow showWindowWithHTMLFile:[defaults objectForKey:moreLink] insideView:self.view];
+}
 
 @end
