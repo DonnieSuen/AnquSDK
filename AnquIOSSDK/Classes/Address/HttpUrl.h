@@ -16,6 +16,10 @@
 #define SCREENHEIGHT CGRectGetHeight([[UIScreen mainScreen] bounds])
 #define SCREENWIDTH CGRectGetWidth([[UIScreen mainScreen] bounds])
 
+#define currentVersionString [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]
+#define currentBIString [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"];
+#define currentVersionShortString [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 //激活URL 初始化
@@ -51,6 +55,8 @@ static const NSString *API_URL_GETWEIXIN = @"http://i.anqu.com/index.php/orders/
 
 static const NSString *API_URL_ANALYSIS = @"http://a-sdk.api-ag.com/analysis.php";
 
+static const NSString *API_URL_ANNIEINFO = @"http://api-ag.aliapp.com/init/?";
+
 //Ali支付
 static const NSString  *ALIPARTNER = @"2088211779053078";
 static const NSString  *ALISELLER  = @"2088211779053078";
@@ -74,6 +80,7 @@ static  NSString *UserLoginText = @"账号登录";
 static  NSString *UserLoginHorizonText = @"账号登录";
 static  NSString *UseRecPwdText = @"尊敬的用户,如您已绑定手机号,请通过手机验证找回.";
 static  NSString *UserRegisterText = @"账号注册";
+static const NSString *Text_Recomm = @"亲，现在五星好评，将有机会获得惊喜大礼包～";
 
 //支付宝快捷支付
 static   NSString *ALIPAY_FAST_PAYWAY = @"alipay_fast";
@@ -146,6 +153,20 @@ static const NSString *GET_USER_INFO = @"http://api.anqu.com/sdk/userInfo.php";
 
 //修改用户信息
 static const NSString *MODIFY_USER_INOF = @"http://api.anqu.com/sdk/userInfo.php";
+
+static  NSString *moreLink = @"moreLink";
+static  NSString *isExchang = @"isExchang";
+static  NSString *language = @"language";
+static  NSString *appversion = @"version";
+static  NSString *appbid = @"bundleidentifier";
+static  NSString *UmengID = @"umengId";
+static  NSString *admobBannerId = @"admobId_b";
+static  NSString *admobIntereId = @"admobId-i";
+static  NSString *appId = @"appId";
+static  NSString *recommendmsg = @"recommendmsg";
+static  NSString *recommendlink = @"recommendlink";
+static  NSString *delaytime = @"delaytime";
+static  NSString  *ExchOpen = @"1";
 
 static NSString *REGISTER_SERVER = @"本《用户注册服务协议》协议是由您与游戏平台上所提供的产品和服务（包括正在提供和将来可能向用户提供的游戏服务和其他网络服务，以下统称为“产品和服务”）所订立的协议。本协议视为在该用户获得及使用产品和服务之日签订并生效。";
 

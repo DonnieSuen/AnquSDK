@@ -21,8 +21,16 @@
 #import "Kefuconnect.h"
 #import "AnalysisInfo.h"
 #import "AESCrypt.h"
+#import "RecommWeb.h"
+#import "CommonUtils.h"
+#import "RecommInfo.h"
 
-@implementation AnquInterfaceKit
+@implementation AnquInterfaceKit{
+    NSMutableArray *data_recomm;
+    int *timetodelay;
+    NSString *gotext;
+    NSString *canceltxt;
+}
 
 __strong static AnquInterfaceKit *singleton = nil;
 __strong static DDTTYLogger *logger;
@@ -127,6 +135,50 @@ static  int ddLogLevel = LOG_FLAG_ERROR | LOG_FLAG_INFO;
     [active activiateToAnqu:rootViewController];
 
     [self getAnalysisInfo];
+}
+
+-(void)initAnnie{
+    NSString * Bistring = currentBIString;
+    NSString * version = currentVersionShortString;
+    NSDictionary *dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                                Bistring, @"bId",
+                                version,@"ver"
+                                ,nil];
+    
+    NSString *postData = [dictionary buildQueryString];
+    NSLog(@"初始化render数据：%@,url is %@",postData,API_URL_ANNIEINFO);
+    httpRequest *_request = [[httpRequest alloc] init];
+    _request.dlegate = self;
+    _request.success = @selector(init_callback:);
+    _request.error = @selector(error_callback);
+    [_request post:API_URL_ANNIEINFO argData:postData];
+}
+
+-(void)init_callback:(NSString*)result{
+    SBJsonParser *parser = [[SBJsonParser alloc] init];
+    NSDictionary *rootDic = [parser objectWithString:result];
+    NSString *status = [[rootDic objectForKey:isExchang] stringValue];
+    if([status isEqualToString:ExchOpen]){ //开启
+        NSArray *arr = [rootDic objectForKey:@"info"];
+        // NSLog(@"Init推荐 = %@",arr[0][@"link"]);
+        // [data_recomm removeAllObjects];
+        
+        //获取NSUserDefaults对象
+        NSUserDefaults *defaults=[CommonUtils getNSUserContext] ;
+        //保存数据
+        [defaults setObject:ExchOpen forKey:isExchang];
+        [defaults setObject:[rootDic objectForKey:UmengID] forKey:UmengID];
+        [defaults setObject:[rootDic objectForKey:admobBannerId] forKey:admobBannerId];
+        [defaults setObject:[rootDic objectForKey:admobIntereId] forKey:admobIntereId];
+        [defaults setObject:[rootDic objectForKey:appId] forKey:appId];
+        [defaults setObject:[rootDic objectForKey:moreLink] forKey:moreLink];
+        // 强制让数据立刻保存
+        [defaults synchronize];
+        [self setRecommParser:rootDic];
+        [self showEstimation];
+    }else{
+        NSLog(@"失败");
+        }
 }
 
 
@@ -744,6 +796,61 @@ static  int ddLogLevel = LOG_FLAG_ERROR | LOG_FLAG_INFO;
     [rootViewController presentModalViewController:more animated:YES ];
     
     // [MTPopupWindow showWindowWithHTMLFile:[defaults objectForKey:moreLink] insideView:self.view];
+}
+
+//导航到评价地址。。
+-(void)showEstimation
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:Text_Recomm delegate:self cancelButtonTitle:nil otherButtonTitles:@"取消",@"前往",nil];
+    alert.tag =2;
+    [alert show];
+}
+
+//解析推荐内容
+-(void) setRecommParser:(NSDictionary *)dicresult
+{
+    NSUserDefaults *defaults=[CommonUtils getNSUserContext];
+    NSString *lang=[defaults objectForKey:language];
+    
+    NSArray *arr = [dicresult objectForKey:@"info"];
+    //NSLog(@"推荐 = %@",arr[0][@"link"]);
+    if (_HUD != NULL) {
+        [_HUD hide:YES];
+    }
+    // [data_recomm removeAllObjects];
+    
+    for (int i = 0; i<arr.count; i++)
+    {
+        RecommInfo * info = [RecommInfo inforFromDic:arr[i]];
+        NSLog(@"进入 = %@",lang);
+        if ([info.lang isEqualToString:lang] && [lang isEqualToString:@"cn"]) {
+            NSLog(@"中文推荐 = %@",info.link);
+            gotext = @"前往";
+            canceltxt = @"取消";
+            
+            [defaults setObject:info.msg forKey:recommendmsg];
+            [defaults setObject:info.link forKey:recommendlink];
+            break;
+        }else if ([info.lang isEqualToString:lang] && [lang isEqualToString:@"en"]){
+            NSLog(@"English文推荐 = %@",info.msg);
+            gotext = @"Go";
+            canceltxt = @"Cancel";
+            
+            [defaults setObject:info.msg forKey:recommendmsg];
+            [defaults setObject:info.link forKey:recommendlink];
+            break;
+        }
+        //  [data_recomm addObject:[RecommInfo inforFromDic:arr[i]]];
+        
+    }
+    
+    
+    
+    //确定后导航到下载地址。。。
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@" " message:[defaults objectForKey:recommendmsg] delegate:self cancelButtonTitle:nil otherButtonTitles:canceltxt,gotext,nil];
+    alert.tag = 1;
+    [alert show];
+    
 }
 
 @end

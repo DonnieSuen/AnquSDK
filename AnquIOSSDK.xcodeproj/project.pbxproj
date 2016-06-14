@@ -19,6 +19,12 @@
 		791C07081D019DE500D6B9B6 /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 791C06FE1D019DE500D6B9B6 /* NSData+CommonCrypto.m */; };
 		791C07091D019DE500D6B9B6 /* NSString+Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = 791C06FF1D019DE500D6B9B6 /* NSString+Base64.h */; };
 		791C070A1D019DE500D6B9B6 /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 791C07001D019DE500D6B9B6 /* NSString+Base64.m */; };
+		7965DA941D0584BE00618191 /* RecommInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 7965DA901D0584BE00618191 /* RecommInfo.h */; };
+		7965DA951D0584BE00618191 /* RecommInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7965DA911D0584BE00618191 /* RecommInfo.m */; };
+		7965DA961D0584BE00618191 /* RecommWeb.h in Headers */ = {isa = PBXBuildFile; fileRef = 7965DA921D0584BE00618191 /* RecommWeb.h */; };
+		7965DA971D0584BE00618191 /* RecommWeb.m in Sources */ = {isa = PBXBuildFile; fileRef = 7965DA931D0584BE00618191 /* RecommWeb.m */; };
+		7965DA9A1D05867600618191 /* CommonUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 7965DA981D05867600618191 /* CommonUtils.h */; };
+		7965DA9B1D05867600618191 /* CommonUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7965DA991D05867600618191 /* CommonUtils.m */; };
 		8B056D891ACA42BB006B9B64 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD8A6481ABFFCE700F4DF58 /* AlipaySDK.framework */; };
 		8B05ED5F1B7F235C00AD65A0 /* Kefuconnect.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B05ED5E1B7F235C00AD65A0 /* Kefuconnect.h */; };
 		8B05ED611B7F239000AD65A0 /* Kefuconnect.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B05ED601B7F239000AD65A0 /* Kefuconnect.m */; };
@@ -224,6 +230,12 @@
 		791C06FE1D019DE500D6B9B6 /* NSData+CommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+CommonCrypto.m"; path = "AESCrypt-ObjC-master/NSData+CommonCrypto.m"; sourceTree = "<group>"; };
 		791C06FF1D019DE500D6B9B6 /* NSString+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Base64.h"; path = "AESCrypt-ObjC-master/NSString+Base64.h"; sourceTree = "<group>"; };
 		791C07001D019DE500D6B9B6 /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Base64.m"; path = "AESCrypt-ObjC-master/NSString+Base64.m"; sourceTree = "<group>"; };
+		7965DA901D0584BE00618191 /* RecommInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecommInfo.h; path = Recomm/RecommInfo.h; sourceTree = "<group>"; };
+		7965DA911D0584BE00618191 /* RecommInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecommInfo.m; path = Recomm/RecommInfo.m; sourceTree = "<group>"; };
+		7965DA921D0584BE00618191 /* RecommWeb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecommWeb.h; path = Recomm/RecommWeb.h; sourceTree = "<group>"; };
+		7965DA931D0584BE00618191 /* RecommWeb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecommWeb.m; path = Recomm/RecommWeb.m; sourceTree = "<group>"; };
+		7965DA981D05867600618191 /* CommonUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUtils.h; sourceTree = "<group>"; };
+		7965DA991D05867600618191 /* CommonUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonUtils.m; sourceTree = "<group>"; };
 		8B05ED5E1B7F235C00AD65A0 /* Kefuconnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Kefuconnect.h; sourceTree = "<group>"; };
 		8B05ED601B7F239000AD65A0 /* Kefuconnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Kefuconnect.m; sourceTree = "<group>"; };
 		8B0EE3DF1AD8ED1200335F88 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -475,6 +487,17 @@
 			name = AES;
 			sourceTree = "<group>";
 		};
+		7965DA8F1D05848800618191 /* Recomm */ = {
+			isa = PBXGroup;
+			children = (
+				7965DA901D0584BE00618191 /* RecommInfo.h */,
+				7965DA911D0584BE00618191 /* RecommInfo.m */,
+				7965DA921D0584BE00618191 /* RecommWeb.h */,
+				7965DA931D0584BE00618191 /* RecommWeb.m */,
+			);
+			name = Recomm;
+			sourceTree = "<group>";
+		};
 		8B5255151AE4E39C00BDC602 /* Log */ = {
 			isa = PBXGroup;
 			children = (
@@ -553,6 +576,7 @@
 		8BD8A4E01ABFDBE100F4DF58 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				7965DA8F1D05848800618191 /* Recomm */,
 				8BAE93311AD3E566006046E2 /* AnquCallback.h */,
 				8BFA23761AC2970700E12148 /* AnquKitConfig.h */,
 				8BD8A5031ABFDBE100F4DF58 /* AnquInterfaceKit.h */,
@@ -837,6 +861,8 @@
 		8BD8A5841ABFDBE100F4DF58 /* tool */ = {
 			isa = PBXGroup;
 			children = (
+				7965DA981D05867600618191 /* CommonUtils.h */,
+				7965DA991D05867600618191 /* CommonUtils.m */,
 				8BD8A5851ABFDBE100F4DF58 /* AnquImage.h */,
 				8BD8A5861ABFDBE100F4DF58 /* AnquImage.m */,
 				8BD8A5871ABFDBE100F4DF58 /* GetImage.h */,
@@ -923,6 +949,7 @@
 				8BAE93321AD3E566006046E2 /* AnquCallback.h in Headers */,
 				8BD8A5BA1ABFDBE100F4DF58 /* NSObject+SBJSON.h in Headers */,
 				8BD8A5C61ABFDBE100F4DF58 /* SBProxyForJson.h in Headers */,
+				7965DA961D0584BE00618191 /* RecommWeb.h in Headers */,
 				8BD8A5C21ABFDBE100F4DF58 /* SBJsonStreamWriter.h in Headers */,
 				8BD8A5BC1ABFDBE100F4DF58 /* NSString+SBJSON.h in Headers */,
 				8BD8A5C01ABFDBE100F4DF58 /* SBJsonParser.h in Headers */,
@@ -933,6 +960,7 @@
 				8BD8A5C41ABFDBE100F4DF58 /* SBJsonWriter.h in Headers */,
 				8BD8A5B71ABFDBE100F4DF58 /* JSON.h in Headers */,
 				8BD8A5B51ABFDBE100F4DF58 /* AnquReachability.h in Headers */,
+				7965DA941D0584BE00618191 /* RecommInfo.h in Headers */,
 				8B6DBCFF1B3A750700B35CA3 /* IpaynowPluginApi.h in Headers */,
 				8B6DBD001B3A750700B35CA3 /* IpaynowPluginDelegate.h in Headers */,
 				8BD8A6221ABFDBE100F4DF58 /* RCDraggableButton.h in Headers */,
@@ -961,6 +989,7 @@
 				8BD8A5D51ABFDBE100F4DF58 /* CollectionPayCell.h in Headers */,
 				8BD8A6281ABFDBE100F4DF58 /* httpRequest.h in Headers */,
 				8BD8A5B11ABFDBE100F4DF58 /* checkWifi.h in Headers */,
+				7965DA9A1D05867600618191 /* CommonUtils.h in Headers */,
 				8BD8A5E51ABFDBE100F4DF58 /* QutoPayTip.h in Headers */,
 				8BD8A6001ABFDBE100F4DF58 /* PSTGridLayoutItem.h in Headers */,
 				8BD8A60F1ABFDBE100F4DF58 /* Header.h in Headers */,
@@ -1129,12 +1158,14 @@
 				8BD8A6031ABFDBE100F4DF58 /* PSTGridLayoutRow.m in Sources */,
 				8B62011F1ADB9E0E003A5714 /* httpGBRequest.m in Sources */,
 				8BD8A6171ABFDBE100F4DF58 /* NSData+hexRepresentationWithSpaces_AS.m in Sources */,
+				7965DA9B1D05867600618191 /* CommonUtils.m in Sources */,
 				8BD8A5E21ABFDBE100F4DF58 /* PayWebView.m in Sources */,
 				8BD8A62F1ABFDBE100F4DF58 /* UserData.m in Sources */,
 				8BD8A5F61ABFDBE100F4DF58 /* PSTCollectionViewFlowLayout.m in Sources */,
 				8BD8A5DC1ABFDBE100F4DF58 /* PayHome.m in Sources */,
 				8BD8A5E61ABFDBE100F4DF58 /* QutoPayTip.m in Sources */,
 				8BD8A5EB1ABFDBE100F4DF58 /* NSIndexPath+PSTCollectionViewAdditions.m in Sources */,
+				7965DA951D0584BE00618191 /* RecommInfo.m in Sources */,
 				8BD8A5B21ABFDBE100F4DF58 /* checkWifi.m in Sources */,
 				8BD8A5ED1ABFDBE100F4DF58 /* PSTCollectionView.m in Sources */,
 				8BF919C31AC1428E0053A278 /* SvUDIDTools.m in Sources */,
@@ -1161,6 +1192,7 @@
 				8BD8A6191ABFDBE100F4DF58 /* NSString+dataFromHexString.m in Sources */,
 				8BD8A5DA1ABFDBE100F4DF58 /* PayCreditCard.m in Sources */,
 				8BD8A6271ABFDBE100F4DF58 /* GetImage.m in Sources */,
+				7965DA971D0584BE00618191 /* RecommWeb.m in Sources */,
 				8BD8A5FB1ABFDBE100F4DF58 /* PSTCollectionViewLayout.m in Sources */,
 				8BD8A5A21ABFDBE100F4DF58 /* SafeHome.m in Sources */,
 				8BD8A5B61ABFDBE100F4DF58 /* AnquReachability.m in Sources */,
