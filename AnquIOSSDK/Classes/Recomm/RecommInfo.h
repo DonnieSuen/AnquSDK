@@ -5,7 +5,7 @@
 //  Copyright (c) 2016年 Jeff. All rights reserved.
 //
 //  基本信息
-
+#import <Foundation/Foundation.h>
 @interface RecommInfo : NSObject
 
 

@@ -6,7 +6,7 @@
 //
 
 #import "RecommWeb.h"
-#import "CommonUtils.h"
+//#import "CommonUtils.h"
 
 @interface RecommWeb ()
 
@@ -31,44 +31,44 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    self.view.frame = CGRectMake(SCREENWIDTH/12, 15, SCREENWIDTH*0.8, SCREENHEIGHT*0.8);
-    // Do any additional setup after loading the view.
-    NSUserDefaults *defaults=[CommonUtils getNSUserContext];
-    _languange=[defaults objectForKey:language];
-    
-    UIView *bg = [[UIView alloc] initWithFrame:CGRectMake(SCREENWIDTH/12, 15, SCREENWIDTH*0.8, SCREENHEIGHT*0.8)];
-    bg.backgroundColor = [UIColor grayColor];
-    [self.view addSubview:bg];
-     
-//    _annText = [[UILabel alloc] initWithFrame:CGRectMake(SCREENWIDTH/4, 20, 80, 50)];
-//    _annText.font = [UIFont systemFontOfSize:14.0];
-//    _annText.textColor = [UIColor redColor];
-//    [self.view addSubview:_annText];
-    
-    _back = [[UIButton alloc] initWithFrame:CGRectMake(SCREENWIDTH/12+SCREENWIDTH*0.8-55, 15, 50, 50)];
-    if ([_languange isEqualToString:@"en"]) {
-        NSLog(@"英文关闭");
-        [_back setTitle:@"Cancel" forState:UIControlStateNormal];
-    }else{
-        [_back setTitle:@"关闭" forState:UIControlStateNormal];
-    }
-    _back.titleLabel.font = [UIFont systemFontOfSize:12];
-    
-    [_back addTarget:self action:@selector(annBackClick:) forControlEvents: UIControlEventTouchUpInside];//处理点击
-    [self.view addSubview:_back];
-    
-    _lineView = [[UIView alloc] initWithFrame:CGRectMake(SCREENWIDTH/12, 55, SCREENWIDTH*0.8, 1)];
-    _lineView.backgroundColor = [UIColor grayColor];
-    [self.view addSubview:_lineView];
-    
-    _webView = [[UIWebView alloc] initWithFrame:CGRectMake(SCREENWIDTH/12, 55, SCREENWIDTH*0.8, SCREENHEIGHT*0.8-15)];
-    _webView.scalesPageToFit =YES;
-    _webView.delegate =self;
-    [self.view addSubview:_webView];
-    
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:_webUrl]];
-    [_webView loadRequest:request];
+//    [super viewDidLoad];
+//    self.view.frame = CGRectMake(SCREENWIDTH/12, 15, SCREENWIDTH*0.8, SCREENHEIGHT*0.8);
+//    // Do any additional setup after loading the view.
+//    NSUserDefaults *defaults=[CommonUtils getNSUserContext];
+//    _languange=[defaults objectForKey:language];
+//    
+//    UIView *bg = [[UIView alloc] initWithFrame:CGRectMake(SCREENWIDTH/12, 15, SCREENWIDTH*0.8, SCREENHEIGHT*0.8)];
+//    bg.backgroundColor = [UIColor grayColor];
+//    [self.view addSubview:bg];
+//     
+////    _annText = [[UILabel alloc] initWithFrame:CGRectMake(SCREENWIDTH/4, 20, 80, 50)];
+////    _annText.font = [UIFont systemFontOfSize:14.0];
+////    _annText.textColor = [UIColor redColor];
+////    [self.view addSubview:_annText];
+//    
+//    _back = [[UIButton alloc] initWithFrame:CGRectMake(SCREENWIDTH/12+SCREENWIDTH*0.8-55, 15, 50, 50)];
+//    if ([_languange isEqualToString:@"en"]) {
+//        NSLog(@"英文关闭");
+//        [_back setTitle:@"Cancel" forState:UIControlStateNormal];
+//    }else{
+//        [_back setTitle:@"关闭" forState:UIControlStateNormal];
+//    }
+//    _back.titleLabel.font = [UIFont systemFontOfSize:12];
+//    
+//    [_back addTarget:self action:@selector(annBackClick:) forControlEvents: UIControlEventTouchUpInside];//处理点击
+//    [self.view addSubview:_back];
+//    
+//    _lineView = [[UIView alloc] initWithFrame:CGRectMake(SCREENWIDTH/12, 55, SCREENWIDTH*0.8, 1)];
+//    _lineView.backgroundColor = [UIColor grayColor];
+//    [self.view addSubview:_lineView];
+//    
+//    _webView = [[UIWebView alloc] initWithFrame:CGRectMake(SCREENWIDTH/12, 55, SCREENWIDTH*0.8, SCREENHEIGHT*0.8-15)];
+//    _webView.scalesPageToFit =YES;
+//    _webView.delegate =self;
+//    [self.view addSubview:_webView];
+//    
+//    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:_webUrl]];
+//    [_webView loadRequest:request];
     
 }
 

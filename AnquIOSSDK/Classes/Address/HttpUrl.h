@@ -69,6 +69,7 @@ static   NSString *UPPAYID = @"10002";
 static   NSString *SZFPAYID = @"10003";
 static   NSString *JUNWANGPAYID = @"10004";
 static   NSString *WEIXINPAYID = @"10005";
+static   NSString *APPLEPAYID = @"10006";
 
 static const  NSString *signKey = @"yO3yp0JqfA3K";
 

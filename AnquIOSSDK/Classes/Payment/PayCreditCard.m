@@ -83,7 +83,7 @@ int ddLogLevel;
     CGFloat min = MIN(SCREENHEIGHT, SCREENWIDTH);
     CGFloat max = MAX(SCREENHEIGHT, SCREENWIDTH);
     
-    if (UIInterfaceOrientationIsLandscape(_orientation) && (_payorietation == TRUE))
+    if (UIInterfaceOrientationIsLandscape(_orientation))
     {
         _bg = [[UIView alloc] initWithFrame:CGRectMake(0, 0, max,min)];
         _bg.backgroundColor = [UIColor whiteColor];
@@ -136,6 +136,9 @@ int ddLogLevel;
     }else if([_payway isEqualToString:WEIXINPAYID] ){
         _anquPayText.text = @"微信支付";
         _paySource = 7;
+    }else if([_payway isEqualToString:APPLEPAYID] ){
+        _anquPayText.text = @"苹果支付";
+        _paySource = 8;
     }
     _anquPayText.font = [UIFont systemFontOfSize:14.0];
     _anquPayText.textColor = UIColorFromRGB(0x222222);
@@ -399,7 +402,8 @@ int ddLogLevel;
       //  [[AnquInterfaceKit sharedInstance] anquRequestedpay:WEIXINPAYID hubView:_HUD];//初始支付请求
         
            [self Requestcreditpay:WEIXINPAYID hubView:_HUD];
-        
+    }else if([_payway isEqualToString:APPLEPAYID] ){        
+        [self Requestcreditpay:APPLEPAYID hubView:_HUD];
     }
 
 //    UIApplication *app = [UIApplication sharedApplication];
@@ -601,6 +605,11 @@ int ddLogLevel;
         if([payChannel isEqualToString:WEIXINPAYID]){
              DDLogDebug(@"paycreditcard 进入微信支付，");
             [self weixinpay:result];
+        }
+        if([payChannel isEqualToString:APPLEPAYID]){
+            DDLogDebug(@"paycreditcard 进入苹果支付，");
+            
+            [self applepay:
         }
 
         

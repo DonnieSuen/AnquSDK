@@ -345,7 +345,6 @@ static  int ddLogLevel = LOG_FLAG_ERROR | LOG_FLAG_INFO;
     NSString *paytype = [OrderInfo sharedSingleton].type;  //支付渠道，今后定义为枚举
     NSString *appid = [AppInfo sharedSingleton].gameID;
     [OrderInfo sharedSingleton].cpappid = appid;
-    
     //第二版本增加区服充值统计
     //    NSString *serverName = [OrderInfo sharedSingleton].serverName;
     //    NSString *roleName = [OrderInfo sharedSingleton].roleName;

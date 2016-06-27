@@ -74,6 +74,7 @@
     [super viewDidLoad];
     
     _orientation = [AnquInterfaceKit getOrientation];
+    
     UIColor *mycolor =[UIColor colorWithWhite:0.5 alpha:0.7];
     self.view.backgroundColor =  mycolor;
     
@@ -87,16 +88,16 @@
 -(void)initPayView{
     
     //支付宝  银联  移动  联通  电信  微信支付(骏网卡)
-    _imageNameArray = [NSArray arrayWithObjects:@"anqu_alipay_app", @"anqu_mobile", @"anqu_unicom", @"anqu_189",@"anqu_weixinpay",nil];//@"anqu_junwang" @"anqu_uppay",
+    _imageNameArray = [NSArray arrayWithObjects:@"anqu_alipay_app", @"anqu_mobile", @"anqu_unicom", @"anqu_189",@"anqu_weixinpay",@"anqu_applepay",nil];//@"anqu_junwang" @"anqu_uppay",
     
-    _imageNameArrayCh = [NSArray arrayWithObjects:@"anqu_alipay_app_choose",@"anqu_mobile_choose",@"anqu_unicom_choose",@"anqu_189_choose" @"anqu_weixinpay_choose",nil];//@"anqu_junwang_choose"  @"anqu_uppay_choose",
+    _imageNameArrayCh = [NSArray arrayWithObjects:@"anqu_alipay_app_choose",@"anqu_mobile_choose",@"anqu_unicom_choose",@"anqu_189_choose" @"anqu_weixinpay_choose",@"anqu_applepay_choose",nil];//@"anqu_junwang_choose"  @"anqu_uppay_choose",
     
     [self.view setBackgroundColor:[UIColor whiteColor]];
     
     CGFloat min = MIN(SCREENHEIGHT, SCREENWIDTH);
     CGFloat max = MAX(SCREENHEIGHT, SCREENWIDTH);
-    
-    if((UIInterfaceOrientationIsLandscape(_orientation) &&(_payorietation == TRUE))){  //UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)
+
+    if(UIInterfaceOrientationIsLandscape(_orientation)){  //UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)
         
         NSLog(@"----横屏支付----");
         _anquPayBgView = [[UIView alloc] initWithFrame:CGRectMake(0,0,max,min)];
@@ -190,7 +191,7 @@
     layout.minimumLineSpacing = 5;
     layout.minimumInteritemSpacing = 5;
     
-   if ((UIInterfaceOrientationIsLandscape(_orientation) && (_payorietation == TRUE)) ) {
+   if (UIInterfaceOrientationIsLandscape(_orientation)  ) {
         NSLog(@"到横屏这里PayWayCollection");
         _anquPayWayCollection = [[PSTCollectionView alloc] initWithFrame:CGRectMake(50, 100, max - 80, min - 110) collectionViewLayout:layout];
    }else if(_orientation == UIInterfaceOrientationUnknown){
@@ -261,7 +262,7 @@
 }
 
 - (NSInteger)collectionView:(PSTCollectionView *)view numberOfItemsInSection:(NSInteger)section {
-    return 5;
+    return 6;
 }
 
 //UICollectionView被选中时调用的方法
@@ -362,6 +363,15 @@
             weixinpay.delegate =_delegate;
             [OrderInfo sharedSingleton].type = WEIXINPAYID;  //支付渠道
             [self presentModalViewController:weixinpay animated:YES];
+            break;
+        }
+        case 5:{ //苹果支付
+            PayCreditCard *oneCard = [[PayCreditCard alloc] init];
+            oneCard.payway = APPLEPAYID;
+            oneCard.paySource = 8;
+            oneCard.anquPayText = @"苹果支付";
+            [OrderInfo sharedSingleton].type = APPLEPAYID;  //支付渠道
+            [self presentModalViewController:oneCard animated:YES];
             break;
         }
 
